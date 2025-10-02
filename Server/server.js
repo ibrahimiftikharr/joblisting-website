@@ -14,10 +14,14 @@ const app = express();
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/jobify', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to mongodb successfully"))
-  .catch((err) => console.log("Cannot connect to mongodb:", err));
+// Connect to MongoDB Atlas
+mongoose.connect('mongodb+srv://nooriftikhar000_db_user:E69S9RvU96vgDp44@cluster0.5zvg7iu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log("Connected to MongoDB Atlas successfully"))
+.catch((err) => console.log("Cannot connect to MongoDB Atlas:", err));
+
 
 // API Routes
 app.use('/auth', authRoutes);
