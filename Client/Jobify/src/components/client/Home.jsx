@@ -13,7 +13,7 @@ function Home()
   
     const fetchJobs = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/jobseeker/fetch-all-jobs', {
+        const response = await axios.get('/jobseeker/fetch-all-jobs', {
           headers: { Authorization: `Bearer ${token}` },
         });
   
@@ -95,7 +95,7 @@ function JobView({ job, handleClosePopup, token }) {
   const applyJob = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/jobseeker/apply-job/${job._id}`,
+        `/jobseeker/apply-job/${job._id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } } 
       );

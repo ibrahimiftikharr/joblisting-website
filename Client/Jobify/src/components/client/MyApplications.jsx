@@ -15,7 +15,7 @@ function MyApplications() {
 
     const fetchAppliedJobs = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/jobseeker/applied-jobs', {
+            const response = await axios.get('/jobseeker/applied-jobs', {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -32,7 +32,7 @@ function MyApplications() {
 
     const deleteJob = async (jobID) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/jobseeker/remove-application/${jobID}`, {
+            const response = await axios.delete(`/jobseeker/remove-application/${jobID}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 

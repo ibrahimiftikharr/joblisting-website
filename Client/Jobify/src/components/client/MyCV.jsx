@@ -14,7 +14,7 @@ function MyCV() {
   const fetchCV = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/jobseeker/fetch-cv",
+        "/jobseeker/fetch-cv",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -44,8 +44,8 @@ function MyCV() {
     e.preventDefault();
     try {
       const url = cv
-        ? "http://localhost:5000/jobseeker/update-cv"
-        : "http://localhost:5000/jobseeker/create-cv";
+        ? "/jobseeker/update-cv"
+        : "/jobseeker/create-cv";
       const method = cv ? "put" : "post";
 
       const response = await axios({
@@ -66,7 +66,7 @@ function MyCV() {
   const deleteCV = async () => {
     try {
       const response = await axios.delete(
-        "http://localhost:5000/jobseeker/delete-cv",
+        "/jobseeker/delete-cv",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

@@ -12,7 +12,7 @@ function MyJobs()
 
   const fetchJobs = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/employer/get-jobs', {
+      const response = await axios.get('/employer/get-jobs', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -42,7 +42,7 @@ function MyJobs()
   
   const deleteJob=async(jobId)=>{
     try{
-          const response= await axios.delete(`http://localhost:5000/employer/delete-job/${jobId}`,{
+          const response= await axios.delete(`/employer/delete-job/${jobId}`,{
             headers: {
               'Authorization': `Bearer ${token}`
             }
@@ -177,7 +177,7 @@ function UpdateJob({ token, updateJob }) {
          return;
       }
 
-      const response = await axios.put(`http://localhost:5000/employer/update-job/${updateJob._id}`, input, {
+      const response = await axios.put(`/employer/update-job/${updateJob._id}`, input, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       alert(response.data.message);

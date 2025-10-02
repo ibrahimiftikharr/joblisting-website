@@ -16,7 +16,7 @@ function Applications() {
 
   const fetchJobs = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/employer/get-jobs', {
+      const response = await axios.get('/employer/get-jobs', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -86,7 +86,7 @@ function ApplicationDetails({ application, jobId, token }) {
 
   const fetchCV = async (cvId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/employer/fetch-cv/${cvId}`, {
+      const response = await axios.get(`/employer/fetch-cv/${cvId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -106,7 +106,7 @@ function ApplicationDetails({ application, jobId, token }) {
   const handleApproval = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/employer/give-approval/${jobId}/${application.userId}`,
+        `/employer/give-approval/${jobId}/${application.userId}`,
         { approvalStatus, interviewDate },
         { headers: { 'Authorization': `Bearer ${token}` } }
       );

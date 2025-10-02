@@ -36,7 +36,7 @@ function PostJob() {
          return;
       }
 
-      const response = await axios.post('http://localhost:5000/employer/post-job', input, {
+      const response = await axios.post('/employer/post-job', input, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

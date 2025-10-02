@@ -51,7 +51,7 @@ function Signup()
                 return;
             }
 
-            const response = await axios.post('http://localhost:5000/auth/signup', input);
+            const response = await axios.post('/auth/signup', input);
             alert(response.data.message);
         } catch (err) {
             alert('Error: ' + err.message);
@@ -67,7 +67,7 @@ function Signup()
                 return;
             }
 
-            const response = await axios.post('http://localhost:5000/auth/signin', input);
+            const response = await axios.post('/auth/signin', input);
 
             const myToken = response.data.token;
             setToken(myToken);
