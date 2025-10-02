@@ -11,6 +11,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({ origin: '*' }));
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 // Connect to MongoDB Atlas
@@ -21,6 +22,7 @@ mongoose.connect('mongodb+srv://nooriftikhar000_db_user:E69S9RvU96vgDp44@cluster
 .then(() => console.log("Connected to MongoDB Atlas successfully"))
 .catch((err) => console.log("Cannot connect to MongoDB Atlas:", err));
 
+// API Routes
 // API Routes
 app.use('/auth', authRoutes);
 app.use('/employer', authenticateToken, employerRoutes);
